@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estadísticas oficiales del Mundial FIFA 2026">
+    <title>FIFA World Cup 2026</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        FIFA 2026
+    </div>
+    <div class="menu-toggle">☰</div>
+
+    <nav>
+        <ul class="menu-navegacion">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="equipos.html">Selecciones</a></li>
+            <li><a href="jugadores.html">Jugadores</a></li>
+            <li><a href="estadisticas.html">Estadísticas</a></li>
+            <li class="dropdown">
+ <a href="#">Acerca de▼</a>
+
+    <ul class="submenu">
+        <li><a href="acercade.html">Nuestro Equipo</a></li>
+        <li><a href="tecnologia.html">Tecnologías Utilizadas</a></li>
+         <li><a href="acercadelproyecto.html">Acerca del Proyecto</a></li>
+    </ul>
+</li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main class="contenedor-paginas">
+
+    <h1>Estadísticas Históricas de las Selecciones</h1>
+
+    <div class="barra-busqueda-filtro">
+
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar por jugador o selección">
+
+        <select id="filtro">
+            <option value="todos">Todas las confederaciones</option>
+            <option value="uefa">UEFA</option>
+            <option value="conmebol">CONMEBOL</option>
+            <option value="concacaf">CONCACAF</option>
+            <option value="caf">CAF</option>
+            <option value="afc">AFC</option>
+            <option value="ofc">OFC</option>
+        </select>
+
+    </div>
+    <div class="contenedor-tabla">
+        <table class="tabla-mundial">
+
+            <thead>
+                <tr>
+                    <th>Confederación</th>
+                    <th>Selección</th>
+                    <th class="texto-centro">PJ</th>
+                    <th class="texto-centro">GF</th>
+                    <th class="texto-centro">GC</th>
+                    <th class="texto-centro">Mundiales Ganados</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabla-body">
+    
+            </tbody>
+
+        </table>
+    </div>
+
+</main>
+
+<footer>
+    <p>Proyecto Grupo 1 - Portal de Selecciones y Jugadores</p>
+    <p>Universidad Mariano Gálvez de Guatemala</p>
+</footer>
+
+<script src="../javascript/estadisticas.js"></script>
+
+</body>
+</html>

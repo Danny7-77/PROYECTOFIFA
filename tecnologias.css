@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-image: url("../img/fondo/fondo1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    background: linear-gradient(135deg, #020617 0%, #1e3a8a 100%);
+    padding: 20px 10px;
+    border-bottom: 4px solid #eab308;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+main{
+    padding-top: 170px;
+}
+
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px black;
+}
+
+.menu-navegacion{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu-navegacion li{
+    position: relative;
+}
+
+.menu-navegacion a{
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.menu-navegacion a:hover{
+    color: white;
+    background: #2563eb;
+    box-shadow: 0 0 12px rgba(59,130,246,0.7);
+}
+
+
+.submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #020617;
+    list-style: none;
+    width: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.dropdown:hover .submenu{
+    display: block;
+}
+
+.submenu a{
+    display: block;
+    padding: 12px;
+    color: white;
+    border-radius: 0;
+}
+
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon{
+    display: none;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.cuadro-glass{
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 35px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.2);
+    text-align: center;
+    transition: 0.4s;
+}
+
+.cuadro-glass:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(234,179,8,0.8);
+    border-color: #eab308;
+}
+
+.cuadro-glass h2,
+.cuadro-glass h3{
+    color: #eab308;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px black;
+}
+
+.cuadro-glass h2{
+    font-size: 2rem;
+}
+
+.cuadro-glass h3{
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+.cuadro-glass p,
+.cuadro-glass li{
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f1f5f9;
+}
+
+.cuadro-glass ul{
+    list-style-position: inside;
+    margin: 15px 0;
+}
+
+.linea{
+    width: 120px;
+    height: 4px;
+    background: #eab308;
+    margin: 0 auto 25px;
+    border-radius: 10px;
+}
+
+
+footer{
+    background: rgba(2,6,23,0.95);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+    border-top: 4px solid #1e3a8a;
+}
+
+footer p{
+    margin: 5px;
+}
+
+@media(max-width:768px){
+
+    .logo{
+        font-size:1.5rem;
+    }
+
+    .menu-navegacion{
+        gap:8px;
+    }
+
+    .menu-navegacion a{
+        font-size:0.85rem;
+        padding:8px 12px;
+    }
+
+    .imagen-giro{
+        justify-content:center;
+        margin-left:0;
+    }
+
+    .imagen-giro img{
+        width:180px;
+        height:180px;
+    }
+
+    section h2{
+        font-size:22px;
+    }
+
+    section p{
+        font-size:16px;
+    }
+
+    .dato h3{
+        font-size:2.3rem;
+    }
+
+
+    .menu-icon{
+        display: block;
+    }
+
+    .menu-navegacion{
+        display: none;
+        flex-direction: column;
+        background: #020617;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 9999;
+    }
+
+    #menu-toggle:checked ~ nav .menu-navegacion{
+        display: flex;
+    }
+}
+
+.dropdown{
+    position: relative;
+}
+
+.submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    list-style: none;
+
+    background: #020617;
+
+    min-width: 180px;
+
+    border-radius: 10px;
+
+    padding: 10px 0;
+
+    z-index: 1000;
+}
+
+.submenu li{
+    width: 100%;
+}
+
+.submenu a{
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu a:hover{
+    background: #2563eb;
+}
+
+.dropdown:hover .submenu{
+    display: block;
+}@media(max-width:768px){
+
+    header{
+        padding: 15px 10px;
+    }
+
+    .logo{
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .menu-icon{
+        display: block;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+    }
+
+
+    .menu-navegacion{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        right: 10px;
+        width: 200px;
+        background: #020617;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    #menu-toggle:checked ~ nav .menu-navegacion{
+        display: flex;
+    }
+
+    .menu-navegacion li{
+        width: 100%;
+    }
+
+    .menu-navegacion a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+    .submenu{
+        position: static;
+        transform: none;
+        width: 100%;
+        background: rgba(255,255,255,0.05);
+        box-shadow: none;
+        margin-top: 5px;
+        border-radius: 8px;
+    }
+
+    .submenu a{
+        font-size: 0.8rem;
+        color: #cbd5e1;
+    }
+
+    main{
+        padding-top: 120px;
+    }
+
+    .cuadro-glass{
+        width: 92%;
+        padding: 25px;
+    }
+
+    .cuadro-glass h2{
+        font-size: 1.6rem;
+    }
+
+    .cuadro-glass h3{
+        font-size: 1.3rem;
+    }
+
+    .cuadro-glass p,
+    .cuadro-glass li{
+        font-size: 1rem;
+    }
+}

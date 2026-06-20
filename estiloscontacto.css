@@ -1,0 +1,367 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+
+    background-image: url("../img/fondo/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #020617 0%, #1e3a8a 100%);
+    padding: 20px 10px;
+    border-bottom: 4px solid #eab308;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px black;
+}
+
+.menu-navegacion {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.menu-navegacion a {
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.menu-navegacion a:hover,
+.menu-navegacion a.activo {
+    color: #ffffff;
+    background-color: #2563eb;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}
+
+
+.contenedor-paginas {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #475569;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+
+.barra-busqueda-filtro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0 30px;
+}
+
+#buscador {
+    width: 320px;
+    padding: 12px;
+    border-radius: 30px;
+    border: 2px solid #B494FF;
+    background: rgba(255,255,255,0.85);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#filtro {
+    width: 250px;
+    padding: 12px;
+    border-radius: 30px;
+    border: 2px solid #B494FF;
+    background: rgba(255,255,255,0.85);
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#buscador:hover,
+#filtro:hover {
+    transform: scale(1.03);
+}
+
+
+#buscador:focus,
+#filtro:focus {
+    box-shadow: 0 0 15px rgba(0,87,184,0.5);
+    border-color: #007bff;
+}
+
+
+.contenedor-tabla {
+    width: 100%;
+    overflow-x: auto;
+    background: #d9d9d9;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.tabla-mundial {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.tabla-mundial th,
+.tabla-mundial td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    white-space: nowrap;
+}
+
+.tabla-mundial th {
+    background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+
+.tabla-mundial tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.tabla-mundial tbody tr:hover {
+    background-color: #eff6ff;
+}
+
+
+.goles-favor { color: #16a34a; font-weight: bold; }
+.goles-contra { color: #dc2626; }
+
+.badge-confederacion {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+
+.grid-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.tarjeta-item {
+    background-color: #ffffff;
+    width: 280px;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.tarjeta-item:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+}
+
+.ocultar {
+    display: none !important;
+}
+
+
+footer {
+    background-color: #020617;
+    color: #94a3b8;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    border-top: 4px solid #1e3a8a;
+    margin-top: 60px;
+}
+
+
+@media (max-width: 768px) {
+
+    .menu-navegacion {
+        gap: 8px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .barra-busqueda-filtro {
+        flex-direction: column;
+    }
+
+    #buscador,
+    #filtro {
+        width: 90%;
+    }
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.menu-toggle{
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+@media (max-width: 768px){
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .menu-navegacion{
+        display: none;
+        flex-direction: column;
+        background: #020617;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .menu-navegacion.show{
+        display: flex;
+    }
+}header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.menu-toggle{
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+@media (max-width: 768px){
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .menu-navegacion{
+        display: none;
+        flex-direction: column;
+        background: #020617;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .menu-navegacion.show{
+        display: flex;
+    }
+}
+
+
+.dropdown{
+    position: relative;
+}
+
+.submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    list-style: none;
+
+    background: #020617;
+
+    min-width: 180px;
+
+    border-radius: 10px;
+
+    padding: 10px 0;
+
+    z-index: 1000;
+}
+
+.submenu li{
+    width: 100%;
+}
+
+.submenu a{
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu a:hover{
+    background: #2563eb;
+}
+
+.dropdown:hover .submenu{
+    display: block;
+}
